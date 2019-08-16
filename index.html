@@ -1,0 +1,197 @@
+<head>
+<meta charset="UTF-8">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <script src="assets/js/wavesurfer.js"></script>
+  <script src="assets/js/app.js"></script>
+  <style>
+      @font-face {
+        font-family: 'Lazer84';
+        src: url('assets/fonts/lazer84.ttf');
+      }
+
+      @font-face {
+        font-family: 'Neon';
+        src: url('assets/fonts/Neon.ttf');
+      }
+
+      #waveform {
+        padding: 10px 0;
+      }
+
+      h1 {
+        color: #FFF;
+        font-size: 4em;
+        margin: 50px 0 30px 0;
+      }
+
+      .footer {
+        color: #FFF;
+        text-align: center;
+      }
+
+      .text-white {
+        color: #FFF;
+      }
+
+      .align-items-bottom {
+         display: flex;
+         align-items: end;
+         justify-content: flex-end;
+      }
+
+      .btn-aqua {
+        background: #00c7ff;
+      }
+
+      .badge-song {
+        letter-spacing: 3px;
+        font-weight: 400;
+        background: None;
+        font-size: 1em;
+      }
+
+      .list-group-song .list-group-item {
+        letter-spacing: 3px;
+        background-color: #28016ff2;
+        border: solid 2px #1a0251;
+        color: #FF3BF3;
+        font-size: 1.3em;
+       }
+
+      .list-group-song .list-group-item:hover {
+        background-color: #1a0251;
+        color: #FF3BF3;
+      }
+
+      .active {
+        background-color: #c200d3ed !important;
+        border: solid 2px #1a0251 !important;
+        color: #FFF !important;
+      }
+
+      .lazer {
+        font-family: 'Lazer84', 'sans serif';
+      }
+
+      body {
+        font-family: 'Neon', 'sans serif';
+        background-image: url('assets/img/80s.jpg');
+        background-size: cover;
+      }
+
+  </style>
+</head>
+
+<body>
+  <div class="container mt-lg-5">
+    <div class="row text-center no-gutters">
+      <h1 class="lazer"> Sketches </h1>
+    </div>
+    <div class="row align-items-bottom">
+      <div class="col-sm-11">
+          <div id="waveform">
+              <!-- Here be waveform -->
+          </div>
+      </div>
+      <div class="col-sm-1">
+          <button class="btn btn-aqua btn-block" id="playPause">
+              <span id="play">
+                  <i class="glyphicon glyphicon-play"></i>
+              </span>
+              <span id="pause" style="display: none">
+                  <i class="glyphicon glyphicon-pause"></i>
+              </span>
+          </button>
+      </div>
+    </div>
+    <div id="playlist" class="list-group list-group-song">
+      
+          <a href="assets/audio\burglar.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            burglar
+            <span class="badge badge-song">0:58</span>
+          </a>
+      
+          <a href="assets/audio\cda.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            cda
+            <span class="badge badge-song">0:47</span>
+          </a>
+      
+          <a href="assets/audio\gush.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            gush
+            <span class="badge badge-song">0:59</span>
+          </a>
+      
+          <a href="assets/audio\horticulture.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            horticulture
+            <span class="badge badge-song">1:16</span>
+          </a>
+      
+          <a href="assets/audio\nick at night.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            nick at night
+            <span class="badge badge-song">0:56</span>
+          </a>
+      
+          <a href="assets/audio\overeasy.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            overeasy
+            <span class="badge badge-song">0:45</span>
+          </a>
+      
+          <a href="assets/audio\quaquaversal.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            quaquaversal
+            <span class="badge badge-song">1:03</span>
+          </a>
+      
+          <a href="assets/audio\sarsaparilla.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            sarsaparilla
+            <span class="badge badge-song">1:21</span>
+          </a>
+      
+          <a href="assets/audio\soup.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            soup
+            <span class="badge badge-song">0:49</span>
+          </a>
+      
+          <a href="assets/audio\spider.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            spider
+            <span class="badge badge-song">0:57</span>
+          </a>
+      
+          <a href="assets/audio\talk.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            talk
+            <span class="badge badge-song">0:39</span>
+          </a>
+      
+          <a href="assets/audio\toussaint.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            toussaint
+            <span class="badge badge-song">1:23</span>
+          </a>
+      
+          <a href="assets/audio\weeki wachee.ogg" class="list-group-item list-group-item-song list-group-item-action">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+            weeki wachee
+            <span class="badge badge-song">0:39</span>
+          </a>
+      
+    </div>
+    <div class="footer">
+        <i class="glyphicon glyphicon-copyright-mark"></i>
+        Keith Ingersoll. &nbsp;
+        <a href="https://wallpaperplay.com/board/neon-80s-wallpapers">Image Credits</a>
+    </div>
+  </div>
+</body>
